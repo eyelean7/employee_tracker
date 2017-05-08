@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel-success">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h4>Divisions</h4>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <% @divisions.each() do |division| %>
+                <li><a href="/divisions/<%= division.id() %>"><%= division.name() %></a></li>
+              <% end %>
+          </ul>
+          <hr>
+          <form action="/divisions" method="post">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input class="form-control" type="text" name="name">
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-success" type="submit">Add Division</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel-success">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h4>Employees</h4>
+        </div>
+        <div class="panel-body">
+          <p>Here are all your employees:</p>
+          <% @employees.each() do |employee| %>
+              <li><%= employee.name %> <a href="/employees/<%= employee.id() %>/edit">Update</a></li>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,3 @@
-has_many(:employees)
+class Division < ActiveRecord::Base
+  has_many(:employees)
+end

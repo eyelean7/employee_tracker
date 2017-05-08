@@ -1,0 +1,19 @@
+
+<h1>Update <%=@employee.name() %> </h1>
+
+<form action="/employees/<%= @employee.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <label for="name">Redescribe your employee:</label>
+  <input id="name" name="name" type="text">
+
+  <label for="division_id">Select a Division</label>
+  <select id='division_id' name='division_id' type='text'>
+    <option value = "nil"></option>
+    <% @divisions.each() do |division| %>
+      <option value="<%= division.id()%>"> <%= division.name() %> </option>
+    <% end %>
+  </select>
+  <button type="submit">Update</button>
+</form>
+
+<a href="/"><button type="button">Go Home</button></a>
